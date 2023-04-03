@@ -4,22 +4,20 @@
 * _strpbrk - searches a string for any of a set of bytes
 * @s: pointer to string to search
 * @accept: pointer to string of bytes to match
-*
-* Return: pointer to the byte in s that matches one of the bytes in accept,
-*         or NULL if no such byte is found
+* Return: Always 0
 */
 char *_strpbrk(char *s, char *accept)
 {
 	char *p;
 
-	while (*s != '\0') 
+	while (*s)
 	{
-		for (p = accept; *p != '\0'; p++)
-		{
-			if (*s == *p)
-				return s;
-		}
+			for (p = 0; accept[p]; p++)
+			{
+			if (*s == accept[p])
+			return (s);
+			}
 		s++;
-	}
-	return NULL;
+		}
+	return (0);
 }
